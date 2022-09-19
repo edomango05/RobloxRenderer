@@ -1,4 +1,5 @@
-#include "../headers/game.h"
+#include "../includes/game.h"
+#include "../includes/instances.h"
 #include <iostream>
 #include "pugixml.hpp"
 
@@ -6,12 +7,12 @@ using pugi::xml_node;
 using std::cout;
 using std::endl;
 
-bool Game::is_Empty(xml_node node)
+bool Game::is_Empty(xml_node& node)
 {
     return node.children("Item").empty();
 }
 
-void Game::get_Descendants(xml_node node)
+void Game::get_Descendants(xml_node& node)
 {
     for (xml_node item : node.children("Item"))
     {
@@ -19,7 +20,12 @@ void Game::get_Descendants(xml_node node)
 
         if (item_class == "Part")
         {
-            
+            xml_node prop = item.child("Properties");
+            // BasePart part;
+            // for (prop.find_child_by_attribute("name", "CFrame").children(); item ; item)
+            // {
+                
+            // };
         }
         if (is_Empty(node))
             continue;

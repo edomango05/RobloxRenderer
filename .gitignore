@@ -1,4 +1,5 @@
 executable
 place.rbxlx
 test.xml
+bin/
 .vscode
